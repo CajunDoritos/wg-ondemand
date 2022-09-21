@@ -1,3 +1,5 @@
+extern crate wg_ondemand;
+
 use networking::wifi::*;
 
 fn main() {
