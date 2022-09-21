@@ -1,3 +1,4 @@
 [submodule "networking/swift-rs"]
 	path = networking/swift-rs
-	url = https://github.com/Brendonovich/swift-rs.git
+	url = https://github.com/CajunDoritos/swift-rs.git
+	branch = remove-srcv-string
