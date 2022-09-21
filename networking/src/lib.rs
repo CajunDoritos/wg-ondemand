@@ -1,3 +1,2 @@
-extern "C" {
-    pub fn hello_world();
-}
+pub mod bindings;
+pub mod wifi;

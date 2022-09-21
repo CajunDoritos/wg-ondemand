@@ -1,3 +1,4 @@
 /target
 .DS_Store
 /networking/platform/mac/.build
+/networking/platform/mac/.swiftpm

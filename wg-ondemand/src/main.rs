@@ -1,6 +1,6 @@
-use networking::hello_world;
+use networking::wifi::*;
 
 fn main() {
-    unsafe { hello_world(); }
+    println!("{}", get_ssid());
     println!("Hello, world!");
 }
