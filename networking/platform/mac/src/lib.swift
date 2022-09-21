@@ -2,8 +2,12 @@ import SwiftRs;
 import CoreWLAN;
 
 @_cdecl("ext_get_ssid")
-func getSSID() -> SRString {
-    let defaultInterface = CWWiFiClient.shared().interface();
+func getWifiSSID(interface: CWInterface) -> SRString {
     
-    return SRString((defaultInterface?.ssid())!);
+    return SRString((interface.ssid())!);
+}
+
+@_cdecl("ext_get_interface")
+func getWifiInterface() -> CWInterface {
+    return(CWWiFiClient.shared().interface()!);
 }
