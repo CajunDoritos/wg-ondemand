@@ -6,6 +6,6 @@ fn main() {
 
     if target == "macos" {
         build::link_swift();
-        build::link_swift_package("platformMac", "./platform/mac/");
+        build::link_swift_package("platformMac", &format!("{}/platform/mac/", env!("CARGO_MANIFEST_DIR")));
     }
 }
