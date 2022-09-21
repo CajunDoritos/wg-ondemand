@@ -1,6 +1,11 @@
+use std::env;
 use swift_rs::build;
 
 fn main() {
-    build::link_swift();
-    build::link_swift_package("platformMac", "./platform/mac/");
+    let target = env::var("CARGO_CFG_TARGET_OS").unwrap();
+
+    if target == "macos" {
+        build::link_swift();
+        build::link_swift_package("platformMac", "./platform/mac/");
+    }
 }
