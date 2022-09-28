@@ -33,3 +33,11 @@ pub fn parse_arguments(args: &Vec<String>) -> Vec<[String; 2]> {
 
     parsed_args
 }
+
+pub const HELP: &str = 
+"Run WireGuard on demand
+
+USAGE: wg-ondemand [OPTIONS] <WIREGUARD_CONFIG>
+
+OPTIONS:
+    -h, --help     Display this help menu";
