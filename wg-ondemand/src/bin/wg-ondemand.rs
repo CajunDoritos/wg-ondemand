@@ -43,6 +43,14 @@ fn main() {
         flags.push(Flags::Help);
     }
 
-    println!("{:?}", flags);
+    println!("{:?}", &flags);
+
+    for flag in flags {
+        match flag {
+            Flags::Help => println!("{}", cmd::HELP),
+            Flags::SSID(ssid) => println!("{}", ssid),
+        }
+    }
+
     println!("{}", get_ssid());
 }
