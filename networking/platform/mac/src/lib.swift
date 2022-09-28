@@ -11,3 +11,8 @@ func getWifiSSID(interface: CWInterface) -> SRString {
 func getWifiInterface() -> CWInterface {
     return(CWWiFiClient.shared().interface()!);
 }
+
+@_cdecl("ext_get_interface_name")
+func getWifiInterfaceName(interface: CWInterface) -> SRString {
+    return(SRString(interface.interfaceName!));
+}
