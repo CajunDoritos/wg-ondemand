@@ -16,7 +16,7 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        .package(name: "SwiftRs", path: "../../swift-rs/")
+        .package(name: "SwiftRs", path: "../../../swift-rs/")
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
