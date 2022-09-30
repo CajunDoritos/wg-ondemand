@@ -6,7 +6,7 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-swift-rs = { path = "./swift-rs" }
+swift-rs = { path = "../swift-rs" }
 
 [build-dependencies]
-swift-rs = { path = "./swift-rs", features = ["build"] }
+swift-rs = { path = "../swift-rs", features = ["build"] }
