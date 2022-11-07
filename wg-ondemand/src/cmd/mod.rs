@@ -35,9 +35,15 @@ pub fn parse_arguments(args: &Vec<String>) -> Vec<[String; 2]> {
 }
 
 pub const HELP: &str = 
-"Run WireGuard on demand
+"Configure WireGuard on demand
 
-USAGE: wg-ondemand [OPTIONS] <WIREGUARD_CONFIG>
+USAGE: wg-ondemand [OPTIONS] <WIREGUARD CONFIG | WIREGUARD INTERFACE>
 
 OPTIONS:
-    -h, --help     Display this help menu";
+    -h, --help          Display this help menu
+    -s, --add-ssid <SSID>
+                        Adds an SSID to config
+    -r, --remove-ssid <SSID>
+                        Removes an SSID from config
+    -e, --exclusive     Runs WireGuard on any SSID not added to config
+    -i, --inclusive     Runs WireGuard on any SSID added to config (default)";

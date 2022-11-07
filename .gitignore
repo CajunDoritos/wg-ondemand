@@ -2,3 +2,5 @@
 .DS_Store
 /networking/platform/mac/.build
 /networking/platform/mac/.swiftpm
+/files/platform/mac/.build
+/files/platform/mac/.swiftpm

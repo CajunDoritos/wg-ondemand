@@ -7,7 +7,10 @@ use wg_ondemand::cmd;
 #[derive(Debug)]
 enum Flags {
     Help,
-    SSID(String),
+    ASSID(String),  //Add SSID
+    RSSID(String),  //Remove SSID
+    Inclusive,
+    Exclusive
 }
 
 struct OneTimeFlags {
@@ -32,9 +35,18 @@ fn main() {
             if (arg[0] == "h" || arg[0] == "help") && !otf.help {
                 otf.help = true;
                 flags.push(Flags::Help);
-            }
-            if arg[0] == "s" || arg[0] == "ssid" {
-                flags.push(Flags::SSID(arg[1].clone()));
+            }  else if arg[0] == "a" || arg[0] == "add-ssid" {
+                flags.push(Flags::ASSID(arg[1].clone()));
+            } else if arg[0] == "r" || arg[0] == "remove-ssid" {
+                flags.push(Flags::RSSID(arg[1].clone()));
+            } else if arg[0] == "e" || arg[0] == "exclusive" {
+                flags.push(Flags::Exclusive);
+            } else if arg[0] == "i" || arg[0] == "inclusive" {
+                flags.push(Flags::Inclusive);
+            } else if arg[0] != "" {
+                println!("-{} is an invalid option\n", arg[0]);
+                println!("{}", cmd::HELP);
+                std::process::exit(1);
             }
         }
     }
@@ -48,7 +60,9 @@ fn main() {
     for flag in flags {
         match flag {
             Flags::Help => println!("{}", cmd::HELP),
-            Flags::SSID(ssid) => println!("{}", ssid),
+            Flags::ASSID(ssid) => println!("{}", ssid),
+            Flags::RSSID(ssid) => println!("{}", ssid),
+            _ => println!("Feature not implemented yet"),
         }
     }
 

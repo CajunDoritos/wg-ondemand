@@ -1,2 +1,2 @@
 [workspace]
-members = ["networking","wg-ondemand"]
+members = ["networking","wg-ondemand", "files"]
